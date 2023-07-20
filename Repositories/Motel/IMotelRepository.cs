@@ -7,6 +7,7 @@ namespace NganHangNhaTro.Repositories
 {
     public interface IMotelRepository
     {
+        public Task<bool> add(Motel motel);
 
         // public User Add(User user);
 

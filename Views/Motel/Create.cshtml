@@ -1,3 +1,7 @@
+@{
+    ViewData["Title"] = "Create Motel";
+}
+
 @model NganHangNhaTro.Models.Views.MotelView
 
 <section id="multiple-column-form">
@@ -5,49 +9,56 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Multiple Column</h4>
+                    <h4 class="card-title">@ViewData["Title"]</h4>
                 </div>
                 <div class="card-body">
-                    <form class="form">
+                    <form class="form" method="POST" asp-controller="motel" asp-action="create" enctype="multipart/form-data">
+                        <p class="text-warning">@ViewBag.ErrorMessage</p>
                         <div class="row">
                             <div class="col-md-6 col-12">
                                 <div class="mb-1">
-                                    <label class="form-label" for="first-name-column">First Name</label>
-                                    <input type="text" id="first-name-column" class="form-control" placeholder="First Name" name="fname-column">
+                                    <label class="form-label" for="title-column">Title</label>
+                                    <input type="text" id="title-column" class="form-control" asp-for="title">
+                                    <span asp-validation-for="title" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="mb-1">
-                                    <label class="form-label" for="last-name-column">Last Name</label>
-                                    <input type="text" id="last-name-column" class="form-control" placeholder="Last Name" name="lname-column">
+                                    <label class="form-label" for="description-column">Description</label>
+                                    <input type="text" id="description-column" class="form-control" asp-for="description">
+                                    <span asp-validation-for="description" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="mb-1">
-                                    <label class="form-label" for="city-column">City</label>
-                                    <input type="text" id="city-column" class="form-control" placeholder="City" name="city-column">
+                                    <label class="form-label" for="detail-column">Detail</label>
+                                    <input type="text" id="detail-column" class="form-control" asp-for="detail">
+                                    <span asp-validation-for="detail" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="mb-1">
-                                    <label class="form-label" for="country-floating">Country</label>
-                                    <input type="text" id="country-floating" class="form-control" name="country-floating" placeholder="Country">
+                                    <label class="form-label" for="address-column">Address</label>
+                                    <input type="text" id="address-column" class="form-control" asp-for="address">
+                                    <span asp-validation-for="address" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="mb-1">
-                                    <label class="form-label" for="company-column">Company</label>
-                                    <input type="text" id="company-column" class="form-control" name="company-column" placeholder="Company">
+                                    <label class="form-label" for="price-column">Price</label>
+                                    <input type="number" id="price-column" class="form-control" asp-for="price">
+                                    <span asp-validation-for="price" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="mb-1">
-                                    <label class="form-label" for="email-id-column">Email</label>
-                                    <input type="email" id="email-id-column" class="form-control" name="email-id-column" placeholder="Email">
+                                    <label class="form-label" for="image-column">Image</label>
+                                    <input type="file" id="image-column" class="form-control" asp-for="image">
+                                    <span asp-validation-for="image" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button type="reset" class="btn btn-primary me-1 waves-effect waves-float waves-light">Submit</button>
+                                <button type="button" onclick="submitForm()" class="btn btn-primary me-1 waves-effect waves-float waves-light">Submit</button>
                                 <button type="reset" class="btn btn-outline-secondary waves-effect">Reset</button>
                             </div>
                         </div>
@@ -57,3 +68,28 @@
         </div>
     </div>
 </section>
+@section Scripts {
+    <script type="text/javascript">
+        function submitForm() {
+            var form = document.querySelector('.form');
+            var formData = new FormData(form);
+
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.onreadystatechange = function () {
+                if (xmlHttp.readyState === 4) {
+                if (xmlHttp.status === 200) {
+                    // Request succeeded
+                    console.log(xmlHttp.response);
+                    console.log(xmlHttp.responseText);
+                } else {
+                    // Request failed
+                    console.error('Error: ' + xmlHttp.statusText);
+                }
+                }
+            };
+
+            xmlHttp.open('POST', form.action, true);
+            xmlHttp.send(formData);
+        }
+    </script>
+}

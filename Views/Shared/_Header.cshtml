@@ -1,3 +1,11 @@
+@{
+@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+string username = HttpContextAccessor.HttpContext.Session.GetString("username");
+
+bool isLogin = string.IsNullOrEmpty(username);
+}
 
 <nav class="header-navbar navbar-expand-lg navbar navbar-fixed align-items-center navbar-shadow navbar-brand-center" data-nav="brand-center">
     <div class="navbar-header d-xl-block d-none">
@@ -44,14 +52,32 @@
             </ul>
         </div>
         <ul class="nav navbar-nav align-items-center ms-auto">
-            <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">John Doe</span><span class="user-status">Admin</span></div><span class="avatar"><img class="round" src="../../../app-assets//images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
+            <li class="nav-item dropdown dropdown-user">
+                @if (!isLogin){
+                    <a class="dropdown-item" asp-area="" asp-controller="auth" asp-action="login">
+                        <span class="user-name fw-bolder">
+                            Login
+                        </span>
+                    </a>
+                }
+                else {
+                <a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="user-nav d-sm-flex d-none">
+                        <span class="user-name fw-bolder">
+                            @HttpContextAccessor.HttpContext.Session.GetString("username")
+                        </span>
+                        @* <span class="user-status">Admin</span> *@
+                    </div>
+                    <span class="avatar">
+                        <img class="round" src="../../../app-assets//images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40">
+                        <span class="avatar-status-online"></span>
+                    </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
-                    <a class="dropdown-item" href="#">
+                    @* <a class="dropdown-item" href="#">
                         <i class="me-50" data-feather="user"></i> Profile
                     </a>
-                    @* <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" href="#">
                         <i class="me-50" data-feather="mail"></i> Inbox
                     </a>
                     <a class="dropdown-item" href="#">
@@ -74,6 +100,7 @@
                         <i class="me-50" data-feather="power"></i> Logout
                     </a>
                 </div>
+            }
             </li>
         </ul>
     </div>

@@ -10,7 +10,7 @@ namespace NganHangNhaTro.Repositories
         public User getByUsernameAndPassword(LoginView login);
 
 
-        public Task<bool> create(RegisterView register);
+        public Task<bool> add(RegisterView register);
 
         // public User Add(User user);
 

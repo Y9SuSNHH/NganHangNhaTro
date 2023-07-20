@@ -23,7 +23,7 @@ namespace NganHangNhaTro.Repositories
             return user;
         }
 
-        public async Task<bool> create(RegisterView register)
+        public async Task<bool> add(RegisterView register)
         {
             try
             {

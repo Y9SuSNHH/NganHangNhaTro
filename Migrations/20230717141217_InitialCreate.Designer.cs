@@ -11,8 +11,8 @@ using NganHangNhaTro.Models;
 namespace NganHangNhaTro.Migrations
 {
     [DbContext(typeof(dbContext))]
-    [Migration("20230715015357_AddImageInMotel")]
-    partial class AddImageInMotel
+    [Migration("20230717141217_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,11 +36,14 @@ namespace NganHangNhaTro.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("created_by")
+                    b.Property<int>("created_by")
+                        .HasColumnType("int");
+
+                    b.Property<string>("description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("description")
+                    b.Property<string>("detail")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -70,7 +73,6 @@ namespace NganHangNhaTro.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
                     b.Property<string>("email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("password")

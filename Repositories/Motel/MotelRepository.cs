@@ -15,5 +15,23 @@ namespace NganHangNhaTro.Repositories
         {
             _dbContext = dbContext;
         }
+
+        public async Task<bool> add(Motel motel)
+        {
+            try
+            {
+                if (motel != null)
+                {
+                    _dbContext.Motel.Add(motel);
+                    await _dbContext.SaveChangesAsync();
+                    return true;
+                }
+                return false;
+            }
+            catch
+            {
+                throw;
+            }
+        }
     }
 }

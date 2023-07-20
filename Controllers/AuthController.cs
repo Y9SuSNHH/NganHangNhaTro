@@ -34,6 +34,8 @@ namespace NganHangNhaTro.Controllers
                     User user = _userRepository.getByUsernameAndPassword(login);
                     if (user != null)
                     {
+                        HttpContext.Session.SetString("username", user.username);
+                        HttpContext.Session.SetString("uid", user.id.ToString());
                         return RedirectToAction("index", "home");
                     }
                     else
@@ -62,7 +64,7 @@ namespace NganHangNhaTro.Controllers
             {
                 try
                 {
-                    var isSuccess = await _userRepository.create(register);
+                    var isSuccess = await _userRepository.add(register);
                     if (isSuccess)
                     {
                         ViewBag.RegisterMessage = "Đăng kí thành công, đăng nhập để tiếp tục.";

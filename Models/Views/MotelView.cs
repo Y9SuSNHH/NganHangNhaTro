@@ -23,9 +23,6 @@ namespace NganHangNhaTro.Models.Views
         public string price { get; set; }
 
         [Required]
-        public string image { get; set; }
-
-        [Required]
-        public string created_by { get; set; }
+        public IFormFile image { get; set; }
     }
 }
