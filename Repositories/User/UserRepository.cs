@@ -47,5 +47,10 @@ namespace NganHangNhaTro.Repositories
                 throw;
             }
         }
+
+        public User getUserById(int id)
+        {
+            return _dbContext.User.SingleOrDefault(u => u.id == id);
+        }
     }
 }

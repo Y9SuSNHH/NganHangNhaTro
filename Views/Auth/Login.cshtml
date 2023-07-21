@@ -58,7 +58,7 @@
                 </div>
                 <span asp-validation-for="password" class="text-danger"></span>
             </div>
-            <button class="btn btn-primary w-100 waves-effect waves-float waves-light" tabindex="4">Sign in</button>
+            <button class="btn btn-primary w-100 waves-effect waves-float waves-light" id="btn-auth-login" tabindex="4">Sign in</button>
         </form>
 
         <p class="text-center mt-2">
@@ -69,8 +69,10 @@
         </p>
     </div>
 </div>
+
 @section Scripts {
     <script src="~/app-assets/js/scripts/pages/auth-login.js"></script>
+    <script src="~/app-assets/js/motel.js"></script>
     <script type="text/javascript">
         $(document).ready(async function(){
             @* let email = document.getElementById("email");

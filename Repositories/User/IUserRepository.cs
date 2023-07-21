@@ -12,9 +12,12 @@ namespace NganHangNhaTro.Repositories
 
         public Task<bool> create(RegisterView register);
 
-        // public User Add(User user);
+		// public User Add(User user);
 
-        // public void SaveChanges();
-        // Add other member-related methods as needed
-    }
+		// public void SaveChanges();
+		// Add other member-related methods as needed
+
+		public User getUserById(int id);
+
+	}
 }
