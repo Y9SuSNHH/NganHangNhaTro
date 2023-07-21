@@ -9,81 +9,81 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = NganHangNhaTro
 build_property.RootNamespace = NganHangNhaTro
-build_property.ProjectDir = d:\DH_Mo_HN\HKIII.2022-2023\LapTrinhWebNangCao\BaiTapLon\Nhom\
+build_property.ProjectDir = D:\DH_Mo_HN\HKIII.2022-2023\LapTrinhWebNangCao\BaiTapLon\Nhom\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = d:\DH_Mo_HN\HKIII.2022-2023\LapTrinhWebNangCao\BaiTapLon\Nhom
+build_property.MSBuildProjectDirectory = D:\DH_Mo_HN\HKIII.2022-2023\LapTrinhWebNangCao\BaiTapLon\Nhom
 build_property._RazorSourceGeneratorDebug = 
 
-[d:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Auth/Login.cshtml]
+[D:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Auth/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Auth/Register.cshtml]
+[D:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Auth/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Auth/User.cshtml]
+[D:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Auth/User.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxVc2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Home/Index.cshtml]
+[D:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Home/Privacy.cshtml]
+[D:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Motel/Create.cshtml]
+[D:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Motel/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW90ZWxcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Motel/Detail.cshtml]
+[D:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Motel/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW90ZWxcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Motel/Edit.cshtml]
+[D:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Motel/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW90ZWxcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Motel/Index.cshtml]
+[D:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Motel/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW90ZWxcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Shared/Error.cshtml]
+[D:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Shared/_Footer.cshtml]
+[D:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Shared/_Footer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb290ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Shared/_Header.cshtml]
+[D:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Shared/_Header.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Shared/_Layout.cshtml]
+[D:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Shared/_LayoutAuth.cshtml]
+[D:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Shared/_LayoutAuth.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBdXRoLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Shared/_MainMenu.cshtml]
+[D:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Shared/_MainMenu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NYWluTWVudS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/_ViewImports.cshtml]
+[D:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/_ViewStart.cshtml]
+[D:/DH_Mo_HN/HKIII.2022-2023/LapTrinhWebNangCao/BaiTapLon/Nhom/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

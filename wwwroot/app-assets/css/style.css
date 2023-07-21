@@ -8,6 +8,13 @@
 .nav-item-user {
     display: none;
 }
+
+/* =============================
+    Shared - _MainMenu
+==============================*/
+.header-navbar .navbar-container ul.navbar-nav li div.input-search {
+    padding: 0;
+}
 /* =============================
     Motel - Index
 ==============================*/
