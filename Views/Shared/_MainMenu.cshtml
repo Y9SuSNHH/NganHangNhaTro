@@ -1,49 +1,40 @@
-@using NganHangNhaTro.Models.Views
+﻿@using NganHangNhaTro.Models.Views
 @{
-    var menuItems = new List<MenuItemView>
-    {
-        new MenuItemView { Controller = "home", Action = "index", Text = "Home" , Icon = "home"},
+	var menuItems = new List<MenuItemView>
+	{
+		new MenuItemView { Controller = "home", Action = "index", Text = "Home" , Icon = "home"},
         //new MenuItemView { Controller = "motel", Action = "index", Text = "Motel", Icon = "box" },
         //new MenuItemView { Controller = "motel", Action = "create", Text = "Create Motel", Icon = "plus" },
     };
 
-    var currentController = ViewContext.RouteData.Values["Controller"]?.ToString();
-    var currentAction = ViewContext.RouteData.Values["Action"]?.ToString();
+	var currentController = ViewContext.RouteData.Values["Controller"]?.ToString();
+	var currentAction = ViewContext.RouteData.Values["Action"]?.ToString();
 }
 <div class="horizontal-menu-wrapper">
-    <div class="header-navbar navbar-expand-sm navbar navbar-horizontal floating-nav navbar-light navbar-shadow menu-border" role="navigation" data-menu="menu-wrapper" data-menu-type="floating-nav">
+	<div class="header-navbar navbar-expand-sm navbar navbar-horizontal floating-nav navbar-light navbar-shadow menu-border" role="navigation" data-menu="menu-wrapper" data-menu-type="floating-nav">
 
-        <!-- Horizontal menu content-->
-        <div class="navbar-container main-menu-content" data-menu="menu-container">
-            <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
-                @foreach (var menuItem in menuItems)
-                {
-                    <li class='nav-item @(currentController == menuItem.Controller && currentAction == menuItem.Action ? "sidebar-group-active active open" : "")'>
-                        <a href="@Url.Action(menuItem.Action, menuItem.Controller)" class="nav-link d-flex align-items-center">
-                            <i data-feather="@menuItem.Icon"></i>
-                            <span data-i18n="@menuItem.Controller">@menuItem.Text</span>
-                        </a>
-                    </li>
-                }
-
-                @*<li>
-                    <!-- E-commerce Search Bar Starts -->
-                    <section id="ecommerce-searchbar" class="ecommerce-searchbar">
-                        <div class="row mt-1">
-                            <div class="col-sm-12">
-                                
-                            </div>
-                        </div>
-                    </section>
-                    <!-- E-commerce Search Bar Ends -->
-                </li>*@
-                <li>
-                    <div class="input-group input-group-merge input-search">
-                        <input type="text" class="form-control search-product" id="shop-search" placeholder="Search Motel" aria-label="Search..." aria-describedby="shop-search" />
-                        <span class="input-group-text"><i data-feather="search" class="text-muted"></i></span>
-                    </div>
-                </li>
-            </ul>            
-        </div>       
-    </div>
+		<!-- Horizontal menu content-->
+		<div class="navbar-container main-menu-content" data-menu="menu-container">
+			<ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
+				@foreach (var menuItem in menuItems)
+				{
+					<li class='nav-item @(currentController == menuItem.Controller && currentAction == menuItem.Action ? "sidebar-group-active active open" : "")'>
+						<a href="@Url.Action(menuItem.Action, menuItem.Controller)" class="nav-link d-flex align-items-center">
+							<i data-feather="@menuItem.Icon"></i>
+							<span data-i18n="@menuItem.Controller">@menuItem.Text</span>
+						</a>
+					</li>
+				}
+				<!-- Tìm kiếm-->
+				@*<li>
+					<div class="input-group input-group-merge input-search">
+						<input type="text" class="form-control search-product" id="shop-search" placeholder="Search Motel" aria-label="Search..." aria-describedby="shop-search" />
+						<button class="input-group-text" id="btn-search">
+							<i data-feather="search" class="text-muted"></i>
+						</button>
+					</div>
+				</li>*@
+			</ul>
+		</div>
+	</div>
 </div>

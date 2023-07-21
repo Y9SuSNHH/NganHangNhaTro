@@ -1,34 +1,66 @@
-﻿$(document).ready(function () {
-    loginSusess();
-})
+﻿//$(document).ready(function () {
+//    loginSuccess();
+//})
+
+document.addEventListener("DOMContentLoaded", function () {
+    loginSuccess();
+});
 
 // Biến
 var btnEditSave = document.getElementById('btn-edit-save');
-
-// Lớp Filter - đối tượng điều kiện lọc
-class Filter {
-    //constructor(filterType, value, fieldName) {
-    //    this.FilterType = filterType;
-    //    this.FilterValue = value;
-    //    this.FieldName = fieldName;
-    //}
-}
+var btnSearch = document.getElementById('btn-search');
+var btnTest = document.getElementById('btn-test');
 
 // Lớp MotelJS
 class MotelJS {
     constructor() {
         this.initEvents();
     }
+
     // Hàm xử lý sự kiện cho các nút
     initEvents() {
-
-        // Sự kiện nhấn nút Sửa
-        //btnEditSave.onclick = function () {
-        //    motelJS.RedirectToEditMotel();
-        //};
+        // Sự kiện nhấn nút tìm kiếm
+        btnSearch.addEventListener('click', function () {
+            // Lấy giá trị từ input tìm kiếm
+            var searchTerm = document.getElementById("motel-search").value;
+            //alert('thanh cong');
+            console.log(123);
+            motelJS.SearchMotelByString(searchTerm);
+        });
+        //
+        //btnTest.onclick = function () {
+        //    alert('thanh cong');
+        //    console.log(123);
+        //}
     }
 
     // ============ Hàm thao tác với dữ liệu ============
+    // Hàm tìm kiếm thông tin nhà trọ
+    SearchMotelByString(searchTerm) {
+        // Tạo XmlHttpRequest
+        var xhr = new XMLHttpRequest();
+        // Xác định phương thức gửi và url
+        xhr.open("GET", `/Motel/SearchMotelByString?searchTerm=${encodeURIComponent(searchTerm)}`, true);
+
+        // Định nghĩa hàm xử lý khi nhận phản hồi từ máy chủ
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    // Xử lý kết quả tìm kiếm ở đây
+                    // Ví dụ: hiển thị kết quả lên trang web
+                    var resultDiv = document.getElementById("searchResult");
+                    resultDiv.innerHTML = xhr.responseText;
+                }
+                else {
+                    // Xử lý lỗi nếu có
+                    console.error("Lỗi khi gửi yêu cầu tìm kiếm. Mã lỗi: " + xhr.status);
+                }
+            }
+        }
+
+        // Gửi yêu cầu
+        xhr.send();
+    }
     RedirectToEditMotel() {
         var xhttp = new XMLHttpRequest(); // Create an XMLHttpRequest object
         // Define a callback function
@@ -46,8 +78,8 @@ class MotelJS {
 
 var motelJS = new MotelJS();
 
-// Các hàm bổ trợ
-function loginSusess() {
+// ============ Các hàm bổ trợ ============
+function loginSuccess() {
     // Tạo XMLHttpRequest object
     var xhr = new XMLHttpRequest();
 
@@ -66,8 +98,9 @@ function loginSusess() {
                 document.getElementById('nav-user').style.display = "none";
             }
             console.log(data); // Hiển thị tên người dùng trong Session
-        } else {
-            console.error('Yêu cầu không thành công. Mã lỗi:', xhr.status);
+        }
+        else {
+            console.log('Yêu cầu không thành công. Mã lỗi:', xhr.status);
         }
     };
 

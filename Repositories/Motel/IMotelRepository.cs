@@ -20,5 +20,7 @@ namespace NganHangNhaTro.Repositories
         public MotelView EditMotel(int Id);
         // Xóa phòng trọ
         public void DeleteMotel(int Id);
+        // Tìm kiếm phòng theo chuỗi thông tin truyền vào
+        public List<Motel> SearchMotelByString(string infoSearch);
     }
 }

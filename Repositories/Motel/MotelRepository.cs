@@ -45,7 +45,7 @@ namespace NganHangNhaTro.Repositories
             return motel;
         }
 
-        // Tìm thông tin phòng trọ theo id
+        // Tìm thông tin phòng trọ theo id để thực hiện sử thông tin phòng theo id
         public MotelView EditMotel(int id)
         {
             // Tìm thông tin phòng trọ theo id từ client truyền vào
@@ -70,6 +70,24 @@ namespace NganHangNhaTro.Repositories
             _dbContext.SaveChanges();
         }
 
+        //Thực hiện tìm kiếm theo chuỗi truyền vào
+        public List<Motel> SearchMotelByString(string infoSearch)
+        {
+            if (infoSearch != null)
+            {
+                var searchResult = _dbContext.Motel.ToList().FindAll(motel => 
+                motel.title.ToLower().Contains(infoSearch.ToLower()) ||
+                motel.address.ToLower().Contains(infoSearch.ToLower()) ||
+                motel.price.Contains(infoSearch.ToLower()) ||
+                motel.detail.Contains(infoSearch.ToLower()) ||
+                motel.priceElectronicWater.Contains(infoSearch.ToLower()) ||
+                motel.acreage.ToString().Contains(infoSearch.ToLower()));
+                return searchResult;
+            }
+            return null;
+        }
+
+        // Thực hiện phân trang
         public List<Motel> GetMotelPage(int page, int pageSize)
         {
             // Tính toán vị trí bắt đầu và số lượng mục cần lấy

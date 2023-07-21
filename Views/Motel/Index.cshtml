@@ -74,41 +74,6 @@
                                     </tr>
                                 }
                             }
-                            @*@foreach (var motel in Model)
-                            {
-                                @if (motel.created_by == Int32.Parse(userId))
-                                {
-                                    <tr>
-                                        <td>1</td>
-                                        <td>@motel.title</td>
-                                        <td class="td-img-index">
-                                            <img class="me-75 img-index" src="@motel.image" alt="Angular" />
-                                        </td>
-                                        <td>@motel.address</td>
-                                        <td>18/07/2023 15:31:36</td>
-                                        <td>
-                                            @if (@motel.status == true)
-                                            {
-                                                <span class="badge rounded-pill badge-light-primary me-1">Còn phòng</span>
-                                            }
-                                            else
-                                            {
-                                                <span class="badge rounded-pill badge-light-primary me-1">Hết phòng</span>
-                                            }
-                                        </td>
-                                        <td>
-                                            @motel.price
-                                        </td>
-                                        <td class="td-option-index">
-                                            <div class="demo-inline-spacing">
-                                                <a type="button" class="btn btn-flat-info" asp-controller="Motel" asp-action="Detail" asp-route-id="@motel.id">Review</a>
-                                                <a type="button" class="btn btn-flat-warning" asp-controller="Motel" asp-action="Edit" asp-route-id="@motel.id" id="btn-edit">Sửa</a>
-                                                <a type="button" class="btn btn-flat-danger" asp-controller="Motel" asp-action="Delete" asp-route-id="@motel.id">Xóa</a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                }
-                            }*@
                         }
                         else
                         {
@@ -121,48 +86,6 @@
     </div>
 </div>
 <!-- Bordered table end -->
-
-@*<section id="wishlist" class="grid-view wishlist-items">
-
-    @if (Model != null && Model.Count > 0)
-    {
-        @foreach (var motel in Model)
-        {
-            @if (motel.created_by == Int32.Parse(userId))
-            {
-                <div class="card ecommerce-card">
-                    <div class="item-img text-center">
-                        <a asp-controller="Motel" asp-action="Detail" asp-route-id="@motel.id" class="motel-link">
-                            <img src="@motel.image" class="img-fluid motel-img" alt="img-placeholder">
-                        </a>
-                    </div>
-                    <div class="card-body">
-                        <div class="item-wrapper">
-                            <div class="item-rating">
-                                <ul class="unstyled-list list-inline"></ul>
-                            </div>
-                            <div class="item-cost">
-                                <h6 class="item-price">@motel.price đ</h6>
-                            </div>
-                        </div>
-                        <div class="item-name">
-                            <a href="app-ecommerce-details.html">@motel.title</a>
-                        </div>
-                        <p class="card-text item-description">
-                            Địa chỉ: @motel.address
-                        </p>
-                    </div>
-                </div>
-            }
-        }
-    }
-    else
-    {
-        <p>Không tìm thấy motel nào.</p>
-    }
-
-    
-</section>*@
 
 @section Scripts {
     <script src="~/app-assets/js/scripts/pages/app-ecommerce-wishlist.js"></script>

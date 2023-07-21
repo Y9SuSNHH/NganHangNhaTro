@@ -30,6 +30,7 @@ namespace NganHangNhaTro.Controllers
             return View(motels);
         }
 
+        // Chi tiết thông tin motel
         public IActionResult Detail(int id)
         {
             Motel motel = _motelRepository.GetMotelList().Where(m => m.id == id).FirstOrDefault(); ;
@@ -41,6 +42,7 @@ namespace NganHangNhaTro.Controllers
             return View();
         }
 
+        // Tạo một motel mới
         [HttpPost]
         public async Task<IActionResult> Create(MotelView motel)
         {
@@ -73,6 +75,7 @@ namespace NganHangNhaTro.Controllers
             }
         }
 
+        // Hiển thị giao diện motel
         [HttpGet]
         public ActionResult Edit(int id)
         {
@@ -80,6 +83,7 @@ namespace NganHangNhaTro.Controllers
             return View(motel);
         }
 
+        // Sửa thông tin motel
         [HttpPost]
         public ActionResult EditMotel(MotelView motelEdit)
         {
@@ -93,10 +97,17 @@ namespace NganHangNhaTro.Controllers
             return View();
         }
 
+        // Xóa Motel theo id
         public IActionResult Delete(int id)
         {
             _motelRepository.DeleteMotel(id);
             return RedirectToAction("Index");
+        }
+
+        // Tìm kiếm thông tin motel theo chuỗi thông tin truyền vào
+        public IActionResult SearchMotelByString(string infoSearch)
+        {
+            return Json(_motelRepository.SearchMotelByString(infoSearch).ToList());
         }
 
     }

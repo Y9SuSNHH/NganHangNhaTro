@@ -8,6 +8,20 @@
 
 @model List<Motel>;
 
+<div class="input-group input-group-merge input-search">
+    <input type="text" class="form-control search-product" id="motel-search" placeholder="Search Motel" aria-label="Search..." aria-describedby="motel-search" />
+    <span class="input-group-text" id="btn-search">
+        <i data-feather="search" class="text-muted"></i>
+    </span>
+</div>
+
+<br />
+<hr />
+
+<div class="wrap-search" id="searchResult">
+
+</div>
+
 <section id="wishlist" class="grid-view wishlist-items">
 
     @if (Model != null && Model.Count > 0)
