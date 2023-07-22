@@ -38,20 +38,23 @@ namespace NganHangNhaTro.Models
         [Required]
         public int created_by { get; set; }
 
-        // Giá điện nước
-        [Required]
-        public string priceElectronicWater { get; set; }
+        //// Giá điện nước
+        //[Required]
+        //public string priceElectronicWater { get; set; }
 
-        // Diện tích
-        [Required]
-        public int acreage { get; set; }
+        //// Diện tích
+        //[Required]
+        //public int acreage { get; set; }
 
         // Trạng thái
         [Required]
         public bool status { get; set; }
 
         // Ngày đăng
-        [Required]
-        public DateTime post { get; set; }
+        //[Required]
+        //public DateTime post { get; set; }
+
+        // Ngày đăng
+        public DateTime created_at { get; set; }
     }
 }

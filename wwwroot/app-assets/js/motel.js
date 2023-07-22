@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Biến
 var btnEditSave = document.getElementById('btn-edit-save');
-var btnSearch = document.getElementById('btn-search');
 var btnTest = document.getElementById('btn-test');
 
 // Lớp MotelJS
@@ -20,18 +19,12 @@ class MotelJS {
     // Hàm xử lý sự kiện cho các nút
     initEvents() {
         // Sự kiện nhấn nút tìm kiếm
+        var btnSearch = document.getElementById('btn-search');
         btnSearch.addEventListener('click', function () {
             // Lấy giá trị từ input tìm kiếm
             var searchTerm = document.getElementById("motel-search").value;
-            //alert('thanh cong');
-            console.log(123);
             motelJS.SearchMotelByString(searchTerm);
         });
-        //
-        //btnTest.onclick = function () {
-        //    alert('thanh cong');
-        //    console.log(123);
-        //}
     }
 
     // ============ Hàm thao tác với dữ liệu ============
@@ -46,14 +39,46 @@ class MotelJS {
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.status === 200) {
-                    // Xử lý kết quả tìm kiếm ở đây
-                    // Ví dụ: hiển thị kết quả lên trang web
-                    var resultDiv = document.getElementById("searchResult");
-                    resultDiv.innerHTML = xhr.responseText;
+                    // Chuyển đổi JSON response thành đối tượng JavaScript
+                    var jsonResponse = JSON.parse(xhr.responseText);
+                    if (jsonResponse.length > 0) {
+                        var resultDiv = document.getElementById("wishlist");
+                        resultDiv.innerHTML = "";
+                        // Duyệt qua từng phần tử trong danh sách kết quả tìm kiếm
+                        for (var motel of jsonResponse) {
+                            // Hiển thị thông tin từng đối tượng motel lên view
+                            resultDiv.innerHTML += `
+                            <div class="card ecommerce-card">
+                                <div class="item-img text-center">
+                                    <a asp-controller="Motel" asp-action="Detail" asp-route-id="${motel.id}" class="motel-link">
+                                        <img src="${motel.image}" class="img-fluid motel-img" alt="img-placeholder">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <div class="item-wrapper">
+                                        <div class="item-rating">
+                                            <ul class="unstyled-list list-inline"></ul>
+                                        </div>
+                                        <div class="item-cost">
+                                            <h6 class="item-price">${motel.price} đ</h6>
+                                        </div>
+                                    </div>
+                                    <div class="item-name">
+                                        <a href="app-ecommerce-details.html">${motel.title}</a>
+                                    </div>
+                                    <p class="card-text item-description">
+                                        Địa chỉ: ${motel.address}
+                                    </p>
+                                </div>
+                            </div>`;
+                        }
+                    } else {
+                        alert("Không tìm thấy kết quả");
+                    }
                 }
                 else {
                     // Xử lý lỗi nếu có
-                    console.error("Lỗi khi gửi yêu cầu tìm kiếm. Mã lỗi: " + xhr.status);
+                    console.log("Lỗi khi gửi yêu cầu tìm kiếm. Mã lỗi: " + xhr.status);
                 }
             }
         }
@@ -61,19 +86,6 @@ class MotelJS {
         // Gửi yêu cầu
         xhr.send();
     }
-    RedirectToEditMotel() {
-        var xhttp = new XMLHttpRequest(); // Create an XMLHttpRequest object
-        // Define a callback function
-        xhttp.onload = function () {
-            // Here you can use the Data
-            // Xử lý dữ liệu nhận được (nếu cần)
-            var newContent = xhttp.responseText; // Nội dung của view mới
-        }
-        // Send a request
-        xhttp.open("GET", "Edit.cshtml");
-        xhttp.send();
-    }
-
 }
 
 var motelJS = new MotelJS();
@@ -113,23 +125,17 @@ function loginSuccess() {
 
 }
 
-//
-function directionLogin() {
-    var form = document.querySelector('.auth-login-form');
-    var formData = new FormData(form);
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.onreadystatechange = function () {
-        if (xmlHttp.readyState == 4) {
-            if (xmlHttp.status == 200) {
-                console.log(xmlHttp.response);
-                console.log(xmlHttp.responseText);
-            } else {
-                console.error('Error: ' + xmlHttp.statusText);
-            }
-        }
+// Đọc file ảnh và hiển thị ảnh
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var elementImg = document.getElementById('img-edit');
+            elementImg.src = e.target.result;
+            //$('#img-edit').attr('src', e.target.result).width(150).height(200);
+        };
+        reader.readAsDataURL(input.files[0]);
     }
-
-    xmlHttp.open('POST', form.action, true);
-    xml.send(formData);
 }
+
 

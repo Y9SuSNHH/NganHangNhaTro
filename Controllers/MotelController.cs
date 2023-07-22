@@ -91,10 +91,10 @@ namespace NganHangNhaTro.Controllers
             {
                 _motelRepository.DeleteMotel(motelEdit.id);
                 _motelRepository.NewMotel(motelEdit);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Motel");
 
             }
-            return View();
+            return View("Edit");
         }
 
         // Xóa Motel theo id
@@ -105,9 +105,24 @@ namespace NganHangNhaTro.Controllers
         }
 
         // Tìm kiếm thông tin motel theo chuỗi thông tin truyền vào
-        public IActionResult SearchMotelByString(string infoSearch)
+        [HttpGet]
+        public IActionResult SearchMotelByString(string searchTerm)
         {
-            return Json(_motelRepository.SearchMotelByString(infoSearch).ToList());
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                if (_motelRepository.SearchMotelByString(searchTerm).Count > 0)
+                {
+                    return Json(_motelRepository.SearchMotelByString(searchTerm));
+                }
+                else
+                {
+                    return Json("");
+                }
+            }
+            else
+            {
+                return Json(_motelRepository.GetMotelList());
+            }
         }
 
     }

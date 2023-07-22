@@ -34,10 +34,11 @@ namespace NganHangNhaTro.Repositories
             motel.image = "/app-assets/images/data/" + motelView.file.FileName;
             motel.detail = motelView.detail;
             motel.created_by = motelView.created_by;
-            motel.priceElectronicWater = motelView.priceElectronicWater;
-            motel.acreage = motelView.acreage;
+            //motel.priceElectronicWater = motelView.priceElectronicWater;
+            //motel.acreage = motelView.acreage;
             motel.status = motelView.status;
-            motel.post = motelView.post;
+            motel.created_at = DateTime.Now;
+            //motel.post = motelView.post;
             // Lưu thông tin motel
             _dbContext.Motel.Add(motel);
 
@@ -73,18 +74,17 @@ namespace NganHangNhaTro.Repositories
         //Thực hiện tìm kiếm theo chuỗi truyền vào
         public List<Motel> SearchMotelByString(string infoSearch)
         {
-            if (infoSearch != null)
-            {
-                var searchResult = _dbContext.Motel.ToList().FindAll(motel => 
-                motel.title.ToLower().Contains(infoSearch.ToLower()) ||
-                motel.address.ToLower().Contains(infoSearch.ToLower()) ||
-                motel.price.Contains(infoSearch.ToLower()) ||
-                motel.detail.Contains(infoSearch.ToLower()) ||
-                motel.priceElectronicWater.Contains(infoSearch.ToLower()) ||
-                motel.acreage.ToString().Contains(infoSearch.ToLower()));
-                return searchResult;
-            }
-            return null;
+            var searchResult = _dbContext.Motel.Where(
+                    motel =>
+                    motel.title.ToLower().Contains(infoSearch.ToLower()) ||
+                    motel.address.ToLower().Contains(infoSearch.ToLower()) ||
+                    motel.price.Contains(infoSearch.ToLower()) ||
+                    motel.detail.Contains(infoSearch.ToLower()) //||
+                    //motel.priceElectronicWater.Contains(infoSearch.ToLower()) ||
+                    //motel.acreage.ToString().Contains(infoSearch.ToLower())
+                ).ToList();
+            return searchResult;
+            //return null;
         }
 
         // Thực hiện phân trang
